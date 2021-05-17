@@ -1,24 +1,28 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './common/styles/styles.scss';
+import './styles.scss';
+import ButtonF from './components/Button/Functional';
+import ButtonC from './components/Button/Class';
 
 function App() {
+  const sayHello = () => { 
+    alert('Hello World');
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper-app">
+      <br/>
+      <br/>
+      <ButtonF color='primary' onClick={sayHello}>FunctionalComponent Button</ButtonF>
+       <br/>
+       <br/>
+      <ButtonC color='secondary' onClick={sayHello}>ClassComponent Button</ButtonC>
+      <br/>
+       <br/>
+      <ButtonF disabled onClick={sayHello}>FunctionalComponent Disabled Button</ButtonF>
+       <br/>
+       <br/>
+      <ButtonC disabled onClick={sayHello}>ClassComponent Disabled Button</ButtonC>
     </div>
   );
 }

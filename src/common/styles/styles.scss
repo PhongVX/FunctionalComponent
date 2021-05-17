@@ -1,0 +1,25 @@
+$primary: #1976d2;
+$secondary: rgb(220, 0, 78);
+
+.btn {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    border: none;
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.75;
+    border-radius: 4px;
+    letter-spacing: 0.02857em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    min-width: 64px;
+    &.primary {
+        background-color: $primary;
+    }
+    &.secondary {
+        background-color: $secondary;
+    }
+    &.default {
+        background-color: #e0e0e0;
+    }
+}
