@@ -5,6 +5,7 @@ import { Tabs } from 'antd';
 import SampleComponents from './views/SampleComponents';
 import SampleLoginFormF from './views/Login/Functional';
 import SampleLoginFormC from './views/Login/Class';
+import Counting from './views/Counting';
 
 const { TabPane } = Tabs;
 
@@ -23,6 +24,9 @@ function App() {
         </TabPane>
         <TabPane tab="Class Login Form" key="4">
           <SampleLoginFormC />
+        </TabPane>
+        <TabPane tab="Counting" key="5">
+          <Counting />
         </TabPane>
       </Tabs>
     </div>
