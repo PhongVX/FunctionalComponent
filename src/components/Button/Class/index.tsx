@@ -5,14 +5,14 @@ type Color = 'primary' | 'secondary' | 'default';
 
 interface ButtonProps {
     onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
-    style?: any
+    style?: object
     children?: any
     color?: Color
     disabled?: boolean,
     className?: string
 }
 
-class Button extends React.Component<ButtonProps, any> {
+class Button extends React.PureComponent<ButtonProps, any> {
     constructor(props:ButtonProps){
         super(props);
     }

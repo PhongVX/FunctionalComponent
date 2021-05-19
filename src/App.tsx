@@ -1,28 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import 'antd/dist/antd.css';
 import './common/styles/styles.scss';
 import './styles.scss';
-import ButtonF from './components/Button/Functional';
-import ButtonC from './components/Button/Class';
+import { Tabs } from 'antd';
+import SampleComponents from './views/SampleComponents';
+import SampleLoginFormF from './views/Login/Functional';
+import SampleLoginFormC from './views/Login/Class';
+
+const { TabPane } = Tabs;
 
 function App() {
-  const sayHello = () => { 
-    alert('Hello World');
-  }
   return (
     <div className="wrapper-app">
-      <br/>
-      <br/>
-      <ButtonF color='primary' onClick={sayHello}>FunctionalComponent Button</ButtonF>
-       <br/>
-       <br/>
-      <ButtonC color='secondary' onClick={sayHello}>ClassComponent Button</ButtonC>
-      <br/>
-       <br/>
-      <ButtonF disabled onClick={sayHello}>FunctionalComponent Disabled Button</ButtonF>
-       <br/>
-       <br/>
-      <ButtonC disabled onClick={sayHello}>ClassComponent Disabled Button</ButtonC>
+      <Tabs defaultActiveKey="1">
+        <TabPane tab="Custom Components" key="1">
+          <SampleComponents />
+        </TabPane>
+        <TabPane tab="Functional Login Form" key="2">
+          <SampleLoginFormF />
+        </TabPane>
+        <TabPane tab="Functional Login Form With Hooks" key="3">
+          <SampleLoginFormF />
+        </TabPane>
+        <TabPane tab="Class Login Form" key="4">
+          <SampleLoginFormC />
+        </TabPane>
+      </Tabs>
     </div>
   );
 }

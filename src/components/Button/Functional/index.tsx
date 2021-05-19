@@ -5,7 +5,7 @@ type Color = 'primary' | 'secondary' | 'default';
 
 interface ButtonProps {
     onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
-    style?: any
+    style?: object
     children?: any
     color?: Color
     disabled?: boolean,
@@ -13,13 +13,14 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = (props) => {
-    const {children, className, style, color, disabled, onClick} = props;
+    const {children, className, style, color, disabled, ...restProps} = props;
     return (
         <button 
+            {...restProps}
             style={{...style}}
             className={classNames('btn', className, (color || 'default'))}
             disabled={disabled} 
-            onClick={onClick}>
+        >
             {children}
         </button>
     )

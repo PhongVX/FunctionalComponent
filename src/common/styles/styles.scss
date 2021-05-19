@@ -1,25 +1,47 @@
 $primary: #1976d2;
 $secondary: rgb(220, 0, 78);
+$default-gray: #e0e0e0; 
 
 .btn {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     border: none;
     color: white;
     font-size: 0.875rem;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1.75;
     border-radius: 4px;
     letter-spacing: 0.02857em;
     text-transform: uppercase;
     padding: 6px 16px;
     min-width: 64px;
+    &:hover{
+        cursor: pointer;
+    }
     &.primary {
         background-color: $primary;
+        &:hover{
+            background-color: darken($primary, 5%)
+        }
     }
     &.secondary {
         background-color: $secondary;
+        &:hover{
+            background-color: darken($secondary, 5%)
+        }
     }
     &.default {
-        background-color: #e0e0e0;
-    }
+        background-color: $default-gray;
+        &:hover{
+            background-color: darken($default-gray, 5%)
+        }
+    }  
+}
+
+.text-field {
+    height: 30px;
+    border: 1px solid $default-gray;
+    padding:5px;
+}
+
+.text-center {
+    text-align: center;
 }
