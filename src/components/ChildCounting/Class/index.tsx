@@ -11,6 +11,7 @@ class ChildCounting extends React.PureComponent<ChildCountingProps, any> {
     }
     render() {
         const { count, name } = this.props
+        console.log('Render: ', name)
         return (
             <>
                 <p>{name}: {count}</p>

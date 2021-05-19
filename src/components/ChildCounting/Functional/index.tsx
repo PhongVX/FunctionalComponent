@@ -4,22 +4,14 @@ interface ChildCountingProps {
     count: number,
     name: string,
 };
-const ChildCounting: React.FC<ChildCountingProps> = (props) => {
-    const [countOdd, setCountOdd] = React.useState(0);
-    const { name, count } = props;
-
-    React.useEffect(()=>{
-        console.log(count % 2);
-        if (count % 2 != 0) {
-            setCountOdd(count);
-        }
-    }, [count]);
-
+const ChildCounting: React.FC<ChildCountingProps> = React.memo((props) => {
+    const {count, name} = props;
+    console.log('Render: ', name)
     return (
         <>
-            <p>{name}: {countOdd}</p>
+            <p>{name}: {count}</p>
         </>
     )
-}
+})
 
 export default ChildCounting;
