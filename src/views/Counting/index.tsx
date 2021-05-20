@@ -4,7 +4,7 @@ import TextFieldF from '../../components/TextField/Functional';
 import ChildCountingF from '../../components/ChildCounting/Functional';
 import ChildCountingC from '../../components/ChildCounting/Class';
 
-const Counting: React.FC<any> = (props) => {
+const Counting: React.FC<any> = React.forwardRef((props, ref) => {
     const [count, setCount] = React.useState(0);
     const [something, setSaySomething] = React.useState('Something');
     // 1. call everytime
@@ -23,6 +23,12 @@ const Counting: React.FC<any> = (props) => {
         console.log('Call only when a certain variable changes: Count=', count);
     },[count]);
     
+    React.useImperativeHandle(ref, () => ({
+        onCount() {
+            handleCount();
+        }
+    }));
+
     const handleCount = () => { 
         setCount(count+1);
     }
@@ -43,6 +49,6 @@ const Counting: React.FC<any> = (props) => {
             <TextFieldF placeHolder='Say Some Thing' onChange={handleSaySomething} />
         </div>
     )
-}
+});
 
 export default Counting;

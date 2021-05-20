@@ -6,6 +6,8 @@ import SampleComponents from './views/SampleComponents';
 import SampleLoginFormF from './views/Login/Functional';
 import SampleLoginFormC from './views/Login/Class';
 import Counting from './views/Counting';
+import ParentCountingF from './views/ParentCounting/Functional';
+import ParentCountingC from './views/ParentCounting/Class';
 
 const { TabPane } = Tabs;
 
@@ -27,6 +29,12 @@ function App() {
         </TabPane>
         <TabPane tab="Counting" key="5">
           <Counting />
+        </TabPane>
+        <TabPane tab="Parent Counting Functional" key="6">
+          <ParentCountingF />
+        </TabPane>
+        <TabPane tab="Parent Counting Class" key="7">
+          <ParentCountingC />
         </TabPane>
       </Tabs>
     </div>
